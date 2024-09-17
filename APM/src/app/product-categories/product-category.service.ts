@@ -1,6 +1,5 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
 import { throwError, Observable, tap, catchError } from 'rxjs';
 import { ProductCategory } from './product-category';
 
@@ -16,7 +15,7 @@ export class ProductCategoryService {
     tap(data => console.log('productCategories: ', JSON.stringify(data))),
     catchError(this.handleError)
   );
-
+  
   constructor(private http: HttpClient) { }
 
   private handleError(err: HttpErrorResponse): Observable<never> {
